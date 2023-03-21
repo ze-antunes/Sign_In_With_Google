@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="style.css" />
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="script.js"></script>
   </head>
 
   <body>
@@ -18,8 +17,8 @@
       data-client_id="870598623757-l5p43hap83e8g02g9d4dg4dkh03c7vf2.apps.googleusercontent.com"
       data-context="signin"
       data-ux_mode="popup"
-      data-login_uri="https://ze-antunes.github.io/Sign_In_With_Google/"
-      data-itp_support="true"
+      data-callback="handleCredentialResponse"
+      data-auto-prompt="false"
     ></div>
 
     <div
@@ -31,5 +30,7 @@
       data-size="large"
       data-logo_alignment="left"
     ></div>
+
+    <script src="script.js"></script>
   </body>
 </html>
