@@ -20,9 +20,7 @@
       data-client_id="870598623757-l5p43hap83e8g02g9d4dg4dkh03c7vf2.apps.googleusercontent.com"
       data-context="signin"
       data-ux_mode="popup"
-      data-login_uri="https://ze-antunes.github.io/Sign_In_With_Google/test"
-      data-callback-success="handleCredentialResponse"
-      data-callback-failure="test"
+      data-login_uri="https://ze-antunes.github.io/Sign_In_With_Google/"
       data-auto-prompt="false"
     ></div>
 
@@ -36,10 +34,18 @@
       data-logo_alignment="left"
     ></div>
 
-    <a href="/test.html">test</a>
-
     <script>
-      console.log("teste 1");
+      console.log("OK");
+
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id:
+            "870598623757-l5p43hap83e8g02g9d4dg4dkh03c7vf2.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
+        });
+        google.accounts.id.prompt();
+      };
+
       let responsePayload;
       const handleCredentialResponse = (response) => {
         responsePayload = decodeJwtResponse(response.credential);
@@ -55,10 +61,6 @@
       function decodeJwtResponse(data) {
         let tokens = data.split(".");
         return JSON.parse(atob(tokens[1]));
-      }
-
-      const test = () => {
-        console.log("teste")
       }
     </script>
   </body>
