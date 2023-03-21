@@ -38,7 +38,7 @@
     <script>
       console.log("teste 1");
       let responsePayload;
-      window.handleCredentialResponse = (response) => {
+      const handleCredentialResponse = (response) => {
         responsePayload = decodeJwtResponse(response.credential);
 
         console.log("ID: " + responsePayload.sub);
@@ -54,7 +54,7 @@
         return JSON.parse(atob(tokens[1]));
       }
 
-      window.test = () => {
+      const test = () => {
         console.log("teste")
       }
     </script>
