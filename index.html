@@ -20,7 +20,7 @@
       data-client_id="870598623757-l5p43hap83e8g02g9d4dg4dkh03c7vf2.apps.googleusercontent.com"
       data-context="signin"
       data-ux_mode="popup"
-      data-callback="handleCredentialResponse"
+      data-callback="test"
       data-auto-prompt="false"
     ></div>
 
@@ -35,22 +35,10 @@
     ></div>
 
     <script>
-      let responsePayload;
-      let handleCredentialResponse = (response) => {
-        responsePayload = decodeJwtResponse(response.credential);
-
-        console.log("ID: " + responsePayload.sub);
-        console.log("Full Name: " + responsePayload.name);
-        console.log("Given Name: " + responsePayload.given_name);
-        console.log("Family Name: " + responsePayload.family_name);
-        console.log("Image URL: " + responsePayload.picture);
-        console.log("Email: " + responsePayload.email);
+      console.log("teste 1");
+      let test = () => {
+        console.log("teste 2");
       };
-
-      function decodeJwtResponse(data) {
-        let tokens = data.split(".");
-        return JSON.parse(atob(tokens[1]));
-      }
     </script>
   </body>
 </html>
