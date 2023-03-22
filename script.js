@@ -3,6 +3,7 @@ let responsePayload;
 let handleCredentialResponse = (response) => {
     responsePayload = decodeJwtResponse(response.credential);
 
+    console.log(responsePayload);
     console.log("ID: " + responsePayload.sub);
     console.log('Full Name: ' + responsePayload.name);
     console.log('Given Name: ' + responsePayload.given_name);
